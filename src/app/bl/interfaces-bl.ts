@@ -166,6 +166,7 @@ export interface ReferenciaElement {
 
 
 export interface BlJson {
+    id?:              number;
     nroBl?:           string;
     nroBlOriginal?:   string;
     manifiesto?:      Manifiesto;
@@ -190,6 +191,7 @@ export interface BlJson {
     blFletes?:        BlFlete[];
     blItems?:         BlItem[];
     blTransportes?:   BlTransporte[];
+    versiones?:       any[];
 }
 
 export interface BlFecha {
@@ -310,4 +312,59 @@ export interface Manifiesto {
     faltas?:                boolean;
     faltaSin?:              boolean;
     naveManifiesto?:        string;
+}
+
+
+
+
+export interface PageBl {
+    content?:          BlJson[];
+    pageable?:         Pageable;
+    last?:             boolean;
+    totalElements?:    number;
+    totalPages?:       number;
+    size?:             number;
+    number?:           number;
+    sort?:             Sort;
+    first?:            boolean;
+    numberOfElements?: number;
+    empty?:            boolean;
+}
+
+
+export interface Pageable {
+    sort?:       Sort;
+    offset?:     number;
+    pageNumber?: number;
+    pageSize?:   number;
+    paged?:      boolean;
+    unpaged?:    boolean;
+}
+
+export interface Sort {
+    empty?:    boolean;
+    sorted?:   boolean;
+    unsorted?: boolean;
+}
+export interface PageBlNative {
+    content?:          BlNative[];
+    pageable?:         Pageable;
+    last?:             boolean;
+    totalElements?:    number;
+    totalPages?:       number;
+    size?:             number;
+    number?:           number;
+    sort?:             Sort;
+    first?:            boolean;
+    numberOfElements?: number;
+    empty?:            boolean;
+}
+
+export interface BlNative {
+    id?:         number;
+    manifiesto?: number;
+    estado?:     string;
+    nave?:       string;
+    bultos?:     number;
+    bl?:         string;
 }

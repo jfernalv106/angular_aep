@@ -24,8 +24,16 @@ export class AppMenuComponent implements OnInit {
                 label: 'BL',
                 items: [
                     { label: 'Carga BL', icon: 'pi pi-fw pi-id-card', routerLink: ['/bl/xml'] },
+                    { label: 'BLs Manifiesto', icon: 'pi pi-fw pi-id-card', routerLink: ['/bl/bls'] },
               
-                   
+                ]
+            },
+            {
+                label: 'Apuntes',
+                items: [
+                    { label: 'Buscar', icon: 'pi pi-fw pi-id-card', routerLink: ['/apunte/buscar'] },
+                    { label: 'Nuevo', icon: 'pi pi-fw pi-id-card', routerLink: ['/apunte/nuevo'] },
+              
                 ]
             }
             

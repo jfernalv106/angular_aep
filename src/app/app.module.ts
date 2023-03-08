@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppLayoutModule } from './layout/app.layout.module';
 import { BlRouteModule } from './bl/bl-route.module';
 import { LoginRouteModule } from './login/login-route.module';
+import { ApunteRouteModule } from './apunte/apunte-route.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { LoginRouteModule } from './login/login-route.module';
         AppRoutingModule,
         AppLayoutModule,
         BlRouteModule,
-        LoginRouteModule
+        LoginRouteModule,
+        ApunteRouteModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

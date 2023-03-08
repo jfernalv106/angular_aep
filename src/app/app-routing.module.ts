@@ -12,6 +12,7 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
                 children: [
                    
                     { path: 'bl', loadChildren: () => import('./bl/bl.module').then(m => m.BlModule) },
+                    { path: 'apunte', loadChildren: () => import('./apunte/apunte.module').then(m => m.ApunteModule) },
                   
                 ]
             },

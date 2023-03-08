@@ -3,17 +3,27 @@ import { CommonModule } from '@angular/common';
 import { BlXmlComponent } from './bl-xml/bl-xml.component';
 import { NgPrimeModule } from '../ng-prime/ng-prime.module';
 import { BlRouteModule } from './bl-route.module';
+import { BlsTableComponent } from './bls-table/bls-table.component';
+import { BlsManifiestoComponent } from './bls-manifiesto/bls-manifiesto.component';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [BlXmlComponent],
+  declarations: [
+    BlXmlComponent,
+    BlsTableComponent,
+    BlsManifiestoComponent
+  ],
   imports: [
     CommonModule,
     NgPrimeModule,
-    BlRouteModule
+    BlRouteModule,
+    FormsModule
   ],exports:[
-    BlXmlComponent
+    BlXmlComponent,
+    BlsTableComponent,
+    BlsManifiestoComponent
   ]
 })
 export class BlModule { }

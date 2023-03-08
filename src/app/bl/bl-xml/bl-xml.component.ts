@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { b64toBl } from '../utils-bl';
 import { BlService } from '../bl.service';
 import { Manifiesto, BlJson } from '../interfaces-bl';
+import { Message } from 'primeng/api';
 
 @Component({
     selector: 'app-bl-xml',
@@ -13,6 +14,7 @@ export class BlXmlComponent implements OnInit {
     uploadedFiles: File[] = [];
     bl: string = '';
     bls:BlJson[]=[];
+    error: Message[]=[];
     
 
     ngOnInit(): void {
@@ -30,10 +32,13 @@ export class BlXmlComponent implements OnInit {
                 this.blService.buscarManifiesto(`${blJson.manifiesto?.nroMfto}`,'').subscribe(
                   (ct: Manifiesto | undefined) => {
                     blJson.manifiesto=ct;
+                    if(ct?.estado==='TRASPASADO'){
+                      blJson.estado='FUERAPLAZO'
+                    }
                     this.bls.push(blJson);
                     this.bl = JSON.stringify(blJson);
                   });
-                // this.producto.fotos?.push({ foto: base64 });
+               
             };
         }
     }
@@ -46,6 +51,9 @@ export class BlXmlComponent implements OnInit {
           (err) => {
               console.log('error');
               console.log(err);
+              this.error = [
+                {severity:'error', summary:'Error', detail:JSON.stringify(err)}
+              ]
           }
       );
       }

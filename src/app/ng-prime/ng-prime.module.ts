@@ -20,7 +20,9 @@ import {PasswordModule} from 'primeng/password';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {DropdownModule} from 'primeng/dropdown';
 import {GalleriaModule} from 'primeng/galleria';
-
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {ToastModule} from 'primeng/toast';
 
 
 @NgModule({
@@ -45,7 +47,10 @@ import {GalleriaModule} from 'primeng/galleria';
     PasswordModule,
     MultiSelectModule,
     DropdownModule,
-    GalleriaModule
+    GalleriaModule,
+    MessagesModule,
+    MessageModule,
+    ToastModule
   ]
 })
 export class NgPrimeModule { }
